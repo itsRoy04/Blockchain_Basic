@@ -43,12 +43,12 @@ function Fetch() {
     //     transact = await web3.eth.getTransaction(block.transactions[i]);
 
     //  }
-const   handleScroll = e => {
-        let element = e.target
-        if (element.scrollHeight - element.scrollTop === element.clientHeight) {
-          // do something at end of scroll
-        }
-      }
+// const   handleScroll = e => {
+//         let element = e.target
+//         if (element.scrollHeight - element.scrollTop === element.clientHeight) {
+//           // do something at end of scroll
+//         }
+//       }
 
 
 
@@ -60,12 +60,12 @@ const   handleScroll = e => {
             <h1 className="mt-4 bg-indigo-500 px-12 rounded py-4 text-white ">Block Number : {blockNumber} </h1>
        : ''}
             </div> 
-                <div className='overflow-scroll text-left  ' onClick={handleScroll}>
+                <div className=' text-left  '>
                     {
                         transactions &&
                         transactions.map(tx =>
                         (
-                            <div className=' ' >
+                            <div className='' >
                                 <ul className=' border-b-black border-2 border-x-0 border-top-0 bg-zinc-100 p-4 mb-2 mt-2' key={tx.id}>
                                     <li> ID: {tx.transactionIndex}</li>
                                     <li> To: {tx.to}</li>
