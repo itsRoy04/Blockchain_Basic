@@ -27,11 +27,12 @@ function Fetch() {
             var transact = [];
             transact = await web3.eth.getTransaction(block.transactions[hash]);
             details.push(transact);
-
+            setTransactions(transactions=>[...details]);
         }
 
-        console.log(details);
-        setTransactions(details);
+        // console.log(details);
+
+        // setTransactions(details);
     }
 
 
@@ -63,7 +64,7 @@ function Fetch() {
                                     <li> ID: {tx.transactionIndex}</li>
                                     <li> To: {tx.to}</li>
                                     <li> from:  {tx.from}</li>
-                                    <li> gasPrice : {tx.gasPrice /1000000000000000} </li>
+                                    <li> gasPrice : {tx.gasPrice /10**18} </li>
 
                                 </ul>
 
