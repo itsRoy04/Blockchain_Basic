@@ -48,23 +48,28 @@ function Fetch() {
     return (
         <section>
             <div className='bg-white flex flex-row lg:flex-row lg:justify-around'>
-                <div className='overflow-auto text-left'>
+            <div>{
+              blockNumber ?
+            <h1 className="mt-4 bg-indigo-500 px-12 rounded py-4 text-white ">Block Number : {blockNumber} </h1>
+       : ''}
+            </div> 
+                <div className=' text-left '>
                     {
                         transactions &&
                         transactions.map(tx =>
                         (
-                            <>
-                                <ul className=' border-b shadow- mb-2 mt-2' key={tx.id}>
+                            <div className=' '>
+                                <ul className=' border-b bg-zinc-100 p-4 mb-2 mt-2' key={tx.id}>
                                     <li> ID: {tx.transactionIndex}</li>
                                     <li> To: {tx.to}</li>
                                     <li> from:  {tx.from}</li>
-                                    <li> gasPrice :{tx.gasPrice}</li>
+                                    <li> gasPrice : {tx.gasPrice /1000000000000000} </li>
 
                                 </ul>
 
 
 
-                            </>
+                            </div>
 
                         )
 
@@ -77,14 +82,10 @@ function Fetch() {
 
                 <div className='flex flex-col h-screen justify-center items-center '>
                     <div className='mb-2'>
-                        <button onClick={getBlockNumber} className=' border-4 border-double border-indigo-600 '>GET BLOCK NUMBER</button>
-
-                        <h1 className="mt-4">{blockNumber}</h1>
+                        <button onClick={getBlockNumber} className='bg-indigo-600 shadow-sm rounded text-white h-10 w-full p-2 '>Get Block Number</button>                       
                     </div>
-
-                    
                     <div>
-                        <button onClick={() => setTransactions(!transactions)} className=' border-4 border-double border-indigo-600 '>Fetch Transactions </button>
+                        <button onClick={() => setTransactions(!transactions)} className=' bg-indigo-600 shadow-sm rounded text-white h-10 w-full p-2 '>Fetch Transactions </button>
                     </div>
                 </div>
 
