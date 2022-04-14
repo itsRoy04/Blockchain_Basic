@@ -59,7 +59,7 @@ function Fetch() {
                         transactions.map(tx =>
                         (
                             <div className=' '>
-                                <ul className=' border-b bg-zinc-100 p-4 mb-2 mt-2' key={tx.id}>
+                                <ul className=' border-b-black border-2 border-x-0 border-top-0 bg-zinc-100 p-4 mb-2 mt-2' key={tx.id}>
                                     <li> ID: {tx.transactionIndex}</li>
                                     <li> To: {tx.to}</li>
                                     <li> from:  {tx.from}</li>
